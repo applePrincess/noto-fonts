@@ -1,0 +1,15 @@
+diff --git a/build/gen.py b/build/gen.py
+index f877cc24..3b28aa12 100755
+--- a/build/gen.py
++++ b/build/gen.py
+@@ -217,9 +217,7 @@ def main(argv):
+ 
+ def GenerateLastCommitPosition(host, header):
+   ROOT_TAG = 'initial-commit'
+-  describe_output = subprocess.check_output(
+-      ['git', 'describe', 'HEAD', '--abbrev=12', '--match', ROOT_TAG],
+-      shell=host.is_windows(), cwd=REPO_ROOT)
++  describe_output = b'initial-commit-0-g@latestCommitRev@'
+   mo = re.match(ROOT_TAG + '-(\d+)-g([0-9a-f]+)', describe_output.decode())
+   if not mo:
+     raise ValueError(

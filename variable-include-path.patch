@@ -13,7 +13,7 @@ index 8daf603..3cd083c 100644
        (is_official_build || !(is_android || sanitize == "MSAN")) &&
        !is_fuchsia && !is_wasm
 -  skia_system_freetype2_include_path = "/usr/include/freetype2"
-+  skia_system_freetype2_include_path = "@INCLUDE_DIR_FREETYPE2@"
++  skia_system_freetype2_include_path = "@INCLUDE_DIR_FREETYPE2@/include/freetype2"
    skia_system_freetype2_lib = "freetype"
  
    skia_use_freetype_woff2 = is_wasm
@@ -26,7 +26,7 @@ index 6838f73..8271930 100644
  if (skia_use_system_harfbuzz) {
    system("harfbuzz") {
 -    include_dirs = [ "/usr/include/harfbuzz" ]
-+    include_dirs = [ "@INCLUDE_DIR_HARFBUZZ@" ]
++    include_dirs = [ "@INCLUDE_DIR_HARFBUZZ@/include/harfbuzz" ]
      libs = [ "harfbuzz" ]
      if (skia_pdf_subset_harfbuzz) {
        libs += [ "harfbuzz-subset" ]

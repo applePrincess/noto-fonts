@@ -1,0 +1,13 @@
+diff --git a/setup.py b/setup.py
+index d5108f1..7f22fa6 100644
+--- a/setup.py
++++ b/setup.py
+@@ -120,7 +120,7 @@ else:
+         )
+     ) + [os.path.join(SKIA_OUT_PATH, 'libskia.a')]
+     EXTRA_COMPILE_ARGS = [
+-        '-std=c++14',
++        '-std=c++17',
+         '-fvisibility=hidden',
+         '-Wno-attributes',
+         '-fdata-sections',
